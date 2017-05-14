@@ -1,0 +1,22 @@
+{
+  "name": "sample",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "npm run watch & npm run server",
+    "build": "browserify -t riotify src/index.js > public/bundle.js --debug",
+    "watch": "chokidar 'src/**' -c 'npm run build'",
+    "server": "browser-sync start --files 'public/*, index.html' --server"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "browser-sync": "^2.18.8",
+    "browserify": "^14.3.0",
+    "chokidar-cli": "^1.2.0",
+    "riot": "^3.5.0",
+    "riotify": "^2.0.0"
+  }
+}
